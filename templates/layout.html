@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> My website </title>
+		<link rel="stylesheet" href="/static/style.css">
+	</head>
+	<body>
+		<header>
+      <!--      <nav> 
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/pizza/11">Pizza</a></li>
+            </nav>
+        -->
+            <nav>
+                <ul>
+                  <li><a href="/">HOME</a></li>
+                  <li><a href="/about">ABOUT</a></li>
+                  <li><a href="/pizza/11">PIZZA</a></li>
+                </ul>
+                </nav>
+            <!-- Starts the new Hero grid -->
+            <main class="hero-grid">
+                <article class="hero-grid">
+                    <!-- make the Hero image flex/scale freely -->
+                    <div class="flex">
+                        <!-- Link to image alternative is used incase tne image dosen't load on their computer-->
+                        <img class=heroimg src="/static/images/pizzas/Hawaiin.jpg" alt="please replace me">
+                    </div>
+                </article>
+            </main>
+        </header>
+
+        <main>
+            {% block content%}{%endblock%}
+        </main>
+        <footer>
+            nobody reads this
+        </footer>
+	</body>
+</html>
