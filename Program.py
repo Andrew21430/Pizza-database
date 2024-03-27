@@ -138,7 +138,7 @@ def about():
 def pizza(id):
     db=sqlite3.connect(DATABASE)
     cursor= db.cursor()
-    cursor.execute('SELECT * FROM Pizza WHERE id =?',(id,))
+    cursor.execute('SELECT * FROM Pizza WHERE pizza_id =?',(id,))
     pizza = cursor.fetchone()
     return render_template('pizza.html',pizza=pizza)
 
@@ -150,6 +150,17 @@ def topping(id):
     topping=cursor.fetchone()
     return render_template('toppings.html',topping=topping)
 
+
+@app.route('/printtest')
+def print():
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor() 
+    # sql statement
+    sql = "SELECT * FROM Pizza;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template('printtest.html',results=results)
+    
 if __name__ == "__main__":
     app.run(debug=True)
 interface()

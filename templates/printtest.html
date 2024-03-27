@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block content %}
+{%for pizza in results%}
+    {{pizza[1]}}
+    <img src="/static/images/pizzas/{{pizza[4]}}">
+{% endfor %}
+{%endblock%}
