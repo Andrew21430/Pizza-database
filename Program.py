@@ -142,6 +142,13 @@ def pizza(id):
     pizza = cursor.fetchone()
     return render_template('pizza.html',pizza=pizza)
 
+@app.route('/toppings/<int:id>')
+def topping(id):
+    db=sqlite3.connect(DATABASE)
+    cursor=db.cursor()
+    cursor.execute('SELECT Pizza.name, Pizza.photo, Topping.topping FROM Pizza INNER JOIN Pizza_Topping ON Pizza.pizza_id = Pizza_Topping.pizza_id INNER JOIN Topping ON Topping.topping_id = Pizza_Topping.topping_id WHERE pizza.pizza_id =?',(id,))
+    topping=cursor.fetchone()
+    return render_template('toppings.html',topping=topping)
 
 if __name__ == "__main__":
     app.run(debug=True)
