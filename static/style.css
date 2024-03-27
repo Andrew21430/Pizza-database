@@ -17,11 +17,16 @@ blockquote,
 dl,
 img,
 dd {
-    margin: 0;
+    margin-left: 10;
+	margin-right: 10;
+	margin-top: 0;
+	margin-bottom: 10;
 }
 
 /*the navbar styling goes here*/
 nav{
+	margin:0;
+	position: fixed;
 	background-color: #424b54;
 }
 nav ul{

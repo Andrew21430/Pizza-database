@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
-<p>{{topping[0]}} has the following topping {{topping[2]}}
-</p>
-<img src="/static/images/pizzas/{{topping[1]}}">
+
+{%for topping in results%}
+    {{topping[0]}}
+    {{topping[2]}}
+    <img src="/static/images/pizzas/{{topping[1]}}">
+{% endfor %}
 {% endblock %}
